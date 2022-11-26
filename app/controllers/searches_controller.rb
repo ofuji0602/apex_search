@@ -1,4 +1,4 @@
-class SerachController < ApplicationController
+class SearchesController < ApplicationController
   GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)
@@ -19,6 +19,6 @@ class SerachController < ApplicationController
   end
 
   def index
-    @youtube_data = find_videos('APEX ブロンズ')
+    @youtube_data = find_videos('ブロンズ')
   end
 end

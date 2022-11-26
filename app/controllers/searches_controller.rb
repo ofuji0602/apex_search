@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
+  GOOGLE_API_KEY = "AIzaSyBUsCWjX4xx51cN810jaw2G65VFNx7MaHo"
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)
     service = Google::Apis::YoutubeV3::YouTubeService.new

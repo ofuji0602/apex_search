@@ -2,10 +2,10 @@ require 'google/apis/youtube_v3'
 require 'active_support/all'
 
 class SearchesController < ApplicationController
-  GOOGLE_API_KEY = Rails.application.credentials.google[:api_key]
+  GOOGLE_API_KEY = "AIzaSyBUsCWjX4xx51cN810jaw2G65VFNx7MaHo"
 
   def index
-    @youtube_data = find_videos('明日香ちゃんねる')
+    @youtube_data = find_videos('APEX ブロンズ')
   end
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)
@@ -22,6 +22,7 @@ class SearchesController < ApplicationController
       published_after: after.iso8601,
       published_before: before.iso8601
     }
-    service.list_searches(:snippet, opt)
+    service.list_searches(:snippet, **opt)
   end
 end
+

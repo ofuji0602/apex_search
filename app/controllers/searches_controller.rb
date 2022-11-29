@@ -5,6 +5,9 @@ class SearchesController < ApplicationController
   GOOGLE_API_KEY = "AIzaSyBUsCWjX4xx51cN810jaw2G65VFNx7MaHo"
 
   def index
+  end
+
+  def rank
     @youtube_data = find_videos('APEX ブロンズ')
   end
 

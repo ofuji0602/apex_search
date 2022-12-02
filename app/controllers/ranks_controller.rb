@@ -7,7 +7,11 @@
 
   def index
     @rank = params[:rank]
-    @youtube_data = find_videos('APEX ブロンズ')
+    if  @rank == "bronz"
+        @rank = "ブロンズ"
+        @keyword = "APEX" + @rank
+        @youtube_data = find_videos(@keyword)
+      end
   end
 
   def find_videos(keyword, after: 1.months.ago, before: Time.now)

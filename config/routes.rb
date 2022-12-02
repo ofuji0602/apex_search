@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'ranks/index'
   root 'pages#index'
+  get 'ranks/index', to: 'ranks#index'
   get 'pages/show'
   get 'tops/index'
   devise_for :users

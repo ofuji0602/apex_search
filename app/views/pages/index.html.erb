@@ -1,23 +1,23 @@
 <h1>トップページ</h1>
 <p>ランク別で探す</p>
 <ul>
-  <%= link_to "ブロンズ帯", ranks_index_path(rank: "bronz") %>
-  <a href="/ranks/silver">シルバー帯</a>
-  <a href="/ranks/gold">ゴールド帯</a>
+  <%= link_to "ブロンズ帯", ranks_path(rank: "bronz") %>
+  <%= link_to "シルバー帯", ranks_path(rank: "silver") %>
+  <%= link_to "ゴールド帯", ranks_path(rank: "gold") %>
 </ul>
 <ul>
-  <a href="#">プラチナ帯</a>
-  <a href="#">ダイアモンド帯</a>
-  <a href="#">マスター帯</a>
+  <%= link_to "プラチナ帯", ranks_path(rank: "platinum") %>
+  <%= link_to "ダイア帯", ranks_path(rank: "diamond") %>
+  <%= link_to "マスター帯", ranks_path(rank: "master") %>
 </ul>
 <p>キーワード別で探す</p>
 <ul>
-  <a href="/keywords/">初心者向け</a>
-  <a href="/keywords/">設定方法</a>
-  <a href="/keywords/">キャラ別</a>
+  <a href="#">初心者向け</a>
+  <a href="#">設定方法</a>
+  <a href="#">キャラ別</a>
 </ul>
 <ul>
-  <a href="/keywords/">リコイル制御</a>
-  <a href="/keywords/">マップ知識</a>
-  <a href="/keywords/">キャラコン</a>
+  <a href="#">リコイル制御</a>
+  <a href="#">マップ知識</a>
+  <a href="#">キャラコン</a>
 </ul>

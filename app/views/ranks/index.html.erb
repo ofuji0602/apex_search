@@ -1,7 +1,13 @@
 <%= @rank %>
-<% @youtube_data.items.each do |item| %>
-  <% snippet = item.snippet %>
-  <p><%= snippet.title %></p>
-  <p><%= snippet.published_at %><%= snippet.channel_title %></p>
-  <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<%= form_with url: searches_path, method: :post, local: true do |f| %>
+  <%= f.hidden_field :rank, value: params[:rank] %>
+  <%= f.check_box :search_query_01 %>
+  <%= f.label :射線管理 %>
+  <%= f.check_box :search_query_02 %>
+  <%= f.label :撃ち合い %>
+  <%= f.check_box :search_query_03 %>
+  <%= f.label :立ち回り %>
+  <%= f.check_box :search_query_04 %>
+  <%= f.label :コーチング動画 %>
+  <%= f.submit "検索する" %>
 <% end %>

@@ -5,66 +5,46 @@
   GOOGLE_API_KEY = "AIzaSyBUsCWjX4xx51cN810jaw2G65VFNx7MaHo"
 
   def index
-		@rank = "ブロンズ"
-    if @search_query = params[:rsearch_query_01] then
-      @search_query = "射線管理"
-      binding.pry
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_02] then
-      @search_query = "撃ち合い"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_03] then
-      @search_query = "立ち回り"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_04] then
-      @search_query = "コーチング動画"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_01] && params[:rsearch_query_02] then
-      @search_query = "射線管理"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "撃ち合い"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_01] && params[:rsearch_query_02] && params[:rsearch_query_03] then
-      @search_query = "射線管理"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "撃ち合い"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "立ち回り"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_01] && params[:rsearch_query_02] && params[:rsearch_query_03] params[:rsearch_query_04] then
-      @search_query = "射線管理"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "撃ち合い"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "立ち回り"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-      @search_query = "コーチング動画"
-      @keyword = "APEX" + @rank + @search_query
-      @youtube_data = find_videos(@keyword)
-    elsif @search_query = params[:rsearch_query_02] && params[:rsearch_query_03] then
-      
-    elsif @search_query = params[:rsearch_query_02] && params[:rsearch_query_04] then
-    
-    elsif @search_query = params[:rsearch_query_01 && params[:rsearch_query_03] && params[:rsearch_query_04] then
-      
-    elsif @search_query = params[:rsearch_query_04] && params[:rsearch_query_01] then
+    case (@rank = params[:rank])
+    when ("bronz") then
+      @rank = "ブロンズ"
+    when ("silver") then
+      @rank = "シルバー"
+    when ("gold") then
+      @rank = "ゴールド"
+    when ("platinum") then
+      @rank = "プラチナ"
+    when ("diamond") then
+      @rank = "ダイアモンド"
+    when ("master") then
+      @rank = "マスター"
     else
+      #(値1~3のいずれにも合致しなかった場合に実行する処理)
     end
+		@search_query = ''
+		if params[:search_query_01].present?
+			@keyword1 = "APEX" + @rank + params[:search_query_01]
+      @youtube_data = find_videos(@keyword1)
+		end
+
+		if params[:search_query_02].present?
+      @keyword2 = "APEX" + @rank + params[:search_query_02]
+      @youtube_data2 = find_videos(@keyword2)
+		end
+
+		if params[:search_query_03].present?
+      @keyword3 = "APEX" + @rank + params[:search_query_03]
+      @youtube_data3 = find_videos(@keyword3)
+		end
+
+		if params[:search_query_04].present?
+      @keyword4 = "APEX" + @rank + params[:search_query_04]
+      @youtube_data4 = find_videos(@keyword4)
+		end
   end
 
 	private
+
 	def find_videos(keyword, after: 1.months.ago, before: Time.now) #検索キーワードと検索範囲を変えれるように引数に値を取っています
 		service = Google::Apis::YoutubeV3::YouTubeService.new
 		service.key = GOOGLE_API_KEY

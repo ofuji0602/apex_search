@@ -1,13 +1,13 @@
 <%= @rank %>
 <%= form_with url: searches_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :rank, value: params[:rank] %>
-  <%= f.check_box :search_query_01 %>
+  <%= f.check_box :search_query_01, {}, "射線管理","" %>
   <%= f.label :射線管理 %>
-  <%= f.check_box :search_query_02 %>
+  <%= f.check_box :search_query_02, {}, "撃ち合い","" %>
   <%= f.label :撃ち合い %>
-  <%= f.check_box :search_query_03 %>
+  <%= f.check_box :search_query_03, {}, "立ち回り","" %>
   <%= f.label :立ち回り %>
-  <%= f.check_box :search_query_04 %>
+  <%= f.check_box :search_query_04, {}, "コーチング動画","" %>
   <%= f.label :コーチング動画 %>
   <%= f.submit "検索する" %>
 <% end %>

@@ -12,12 +12,12 @@
 </ul>
 <p>キーワード別で探す</p>
 <ul>
-  <a href="#">初心者向け</a>
-  <a href="#">設定方法</a>
-  <a href="#">キャラ別</a>
+  <%= link_to "初心者向け", ranks_path(rank: "bronz") %>
+  <%= link_to "設定方法", ranks_path(rank: "silver") %>
+  <%= link_to "キャラ別", ranks_path(rank: "gold") %>
 </ul>
 <ul>
-  <a href="#">リコイル制御</a>
-  <a href="#">マップ知識</a>
-  <a href="#">キャラコン</a>
+  <%= link_to "リコイル制御", ranks_path(rank: "platinum") %>
+  <%= link_to "マップ知識", ranks_path(rank: "diamond") %>
+  <%= link_to "キャラコン", ranks_path(rank: "master") %>
 </ul>

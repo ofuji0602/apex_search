@@ -1,44 +1,14 @@
 <%= @rank %>
 <%= @search_query %>
-<% if @youtube_data.present? %>
-	<% @youtube_data.each do |item| %>
-		<% snippet = item.snippet %>
-		<p><%= snippet.title %></p>
-		<p><%= snippet.published_at %><%= snippet.channel_title %></p>
-		<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-	<% end %>
-<% else %>
-<p>一致した動画がございませんでした。</p>
-<% end %>
-<% if @youtube_data2.present? %>
-	<h2><%= @keyword2 %></h2>
-	<% @youtube_data2.each do |item| %>
-		<% snippet = item.snippet %>
-		<p><%= snippet.title %></p>
-		<p><%= snippet.published_at %><%= snippet.channel_title %></p>
-		<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-	<% end %>
-<% else %>
-	<p>一致した動画がございませんでした。</p>
-<% end %>
-<% if @youtube_data3.present? %>
-	<h2><%= @keyword3 %></h2>
-	<% @youtube_data3.each do |item| %>
-		<% snippet = item.snippet %>
-		<p><%= snippet.title %></p>
-		<p><%= snippet.published_at %><%= snippet.channel_title %></p>
-		<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-	<% end %>
-<% else %>
-	<p>一致した動画がございませんでした。</p>
-<% end %>
-<% if @youtube_data4.present? %>
-	<h2><%= @keyword4 %></h2>
-	<% @youtube_data4.each do |item| %>
-		<% snippet = item.snippet %>
-		<p><%= snippet.title %></p>
-		<p><%= snippet.published_at %><%= snippet.channel_title %></p>
-		<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<% if @results.present? %>
+	<% @results.each do |checked_item, result| %>
+		<h2><%= checked_item %></h2>
+		<% result.each do |item| %>
+			<% snippet = item.snippet %>
+			<p><%= snippet.title %></p>
+			<p><%= snippet.published_at %><%= snippet.channel_title %></p>
+			<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+		<% end %>
 	<% end %>
 <% else %>
 	<p>一致した動画がございませんでした。</p>

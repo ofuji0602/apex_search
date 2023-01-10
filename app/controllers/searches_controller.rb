@@ -21,27 +21,50 @@
     else
       #(値1~3のいずれにも合致しなかった場合に実行する処理)
     end
-		@search_query = ''
-		if params[:search_query_01].present?
-			@keyword1 = "APEX" + @rank + params[:search_query_01]
-      @youtube_data = find_videos(@keyword1)
-		end
 
-		if params[:search_query_02].present?
-      @keyword2 = "APEX" + @rank + params[:search_query_02]
-      @youtube_data2 = find_videos(@keyword2)
-		end
+      @results = {}
+      if params[:search_query].present?
+        params[:search_query].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + @rank + " " + checked_item)
+        end
+      end
+    
+      if params[:search_query_02].present?
+        params[:search_query_02].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item)
+        end
+      end
 
-		if params[:search_query_03].present?
-      @keyword3 = "APEX" + @rank + params[:search_query_03]
-      @youtube_data3 = find_videos(@keyword3)
-		end
+      if params[:search_query_03].present?
+        params[:search_query_03].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item + " " + "設定方法")
+        end
+      end
 
-		if params[:search_query_04].present?
-      @keyword4 = "APEX" + @rank + params[:search_query_04]
-      @youtube_data4 = find_videos(@keyword4)
-		end
-  end
+      if params[:search_query_04].present?
+        params[:search_query_04].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item + " " + "使い方")
+        end
+      end
+
+      if params[:search_query_05].present?
+        params[:search_query_05].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item + " " + "リコイル制御")
+        end
+      end
+
+      if params[:search_query_06].present?
+        params[:search_query_06].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item + " " + "マップ解説")
+        end
+      end
+
+      if params[:search_query_06].present?
+        params[:search_query_06].each do |checked_item|
+          @results[checked_item] = find_videos("APEX" + " " + checked_item + " " + "やり方")
+        end
+      end
+    end
 
 	private
 

@@ -1,0 +1,169 @@
+<%= @keyword %>
+<% if @keyword == "初心者向け"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_02, {multiple: true}, "基本知識",nil %>
+    <%= f.label :基本知識 %>
+    <%= f.check_box :search_query_02, {multiple: true}, "基本操作",nil %>
+    <%= f.label :基本操作 %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>
+<% if @keyword == "設定方法"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_03, {multiple: true}, "キーマウ",nil %>
+    <%= f.label :キーマウ %>
+    <%= f.check_box :search_query_03, {multiple: true}, "PAD",nil %>
+    <%= f.label :PAD %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>
+<% if @keyword == "キャラ別"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Bloodhound",nil %>
+    <%= f.label :ブラッドハウンド %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Gibraltar",nil %>
+    <%= f.label :ジブラルタル %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Lifeline",nil %>
+    <%= f.label :ライフライン %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Pathfinder",nil %>
+    <%= f.label :パスファインダー %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Wraith",nil %>
+    <%= f.label :レイス %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Bangalore",nil %>
+    <%= f.label :バンガロール %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Coustic",nil %>
+    <%= f.label :コースティック %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Mirage",nil %>
+    <%= f.label :ミラージュ %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Octane",nil %>
+    <%= f.label :オクタン %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Wattson",nil %>
+    <%= f.label :ワットソン %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Crypto",nil %>
+    <%= f.label :クリプト %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Revenant",nil %>
+    <%= f.label :レヴナント %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Loba",nil %>
+    <%= f.label :ローバ %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Rampart",nil %>
+    <%= f.label :ランパート %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Horizone",nil %>
+    <%= f.label :ホライゾン %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Fuse",nil %>
+    <%= f.label :ヒューズ %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Valkyrie",nil %>
+    <%= f.label :ヴァルキリー %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Seer",nil %>
+    <%= f.label :シア %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Ash",nil %>
+    <%= f.label :アッシュ %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Mad Maggie",nil %>
+    <%= f.label :マッドマギー %>
+    <%= f.check_box :search_query_04, {multiple: true}, "New Castle",nil %>
+    <%= f.label :ニューキャッスル %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Vantage",nil %>
+    <%= f.label :ヴァンテージ %>
+    <%= f.check_box :search_query_04, {multiple: true}, "Catalyst",nil %>
+    <%= f.label :カタリスト %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>
+<% if @keyword == "リコイル制御"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_05, {multiple: true}, "ハボック",nil %>
+    <%= f.label :ハボック %>
+    <%= f.check_box :search_query_05, {multiple: true}, "フラットライン",nil %>
+    <%= f.label :フラットライン %>
+    <%= f.check_box :search_query_05, {multiple: true}, "ヘムロック",nil %>
+    <%= f.label :ヘムロック %>
+    <%= f.check_box :search_query_05, {multiple: true}, "R301",nil %>
+    <%= f.label :R301 %>
+    <%= f.check_box :search_query_05, {multiple: true}, "オルタネーター",nil %>
+    <%= f.label :オルタネーター %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :プラウラー %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :R99 %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :ボルト %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :CAR %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :ディボーション %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :Lスター %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :スピットファイア %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.label :ランページ %>
+    <%= f.check_box :search_query_05, {multiple: true}, "武器名",nil %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>
+<% if @keyword == "マップ知識"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_06, {multiple: true}, "キングスキャニオン",nil %>
+    <%= f.label :キングスキャニオン %>
+    <%= f.check_box :search_query_06, {multiple: true}, "オリンパス",nil %>
+    <%= f.label :オリンパス %>
+    <%= f.check_box :search_query_06, {multiple: true}, "ストームポイント",nil %>
+    <%= f.label :ストームポイント %>
+    <%= f.check_box :search_query_06, {multiple: true}, "ワールズエッジ",nil %>
+    <%= f.label :ワールズエッジ %>
+    <%= f.check_box :search_query_06, {multiple: true}, "ブロークンムーン",nil %>
+    <%= f.label :ブロークンムーン %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>
+<% if @keyword == "キャラコン"%>
+  <%= form_with url: searches_path, method: :post, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.hidden_field :keyword, value: params[:keyword] %>
+    <%= f.check_box :search_query_07, {multiple: true}, "キャラコン名",nil %>
+    <%= f.label :キャラコン名 %>
+    <%= f.submit "検索する" %>
+  <% end %>
+<% else %>
+<p>ミス</p>
+<% end %>

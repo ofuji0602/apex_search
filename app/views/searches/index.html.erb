@@ -5,9 +5,12 @@
 		<h2><%= checked_item %></h2>
 		<% result.each do |item| %>
 			<% snippet = item.snippet %>
+      <% id = item.id %>
+			<p><%= id.video_id %></p>
 			<p><%= snippet.title %></p>
 			<p><%= snippet.published_at %><%= snippet.channel_title %></p>
 			<div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= item.id.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <%= link_to("お気に入り", "/favorites/#{id.video_id}", {method: "get"}) %> 
 		<% end %>
 	<% end %>
 <% else %>

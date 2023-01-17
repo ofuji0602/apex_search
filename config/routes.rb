@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
   post 'searches', to: 'searches#index'
   post 'keywords', to: 'keywords#index'
+  get  'favorites/:id', to: 'fovorites#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,2 +1,23 @@
-<h1>ようこそ</h1>
-<p>トップページです。</p>
+<h1>トップページ</h1>
+<p>ランク別で探す</p>
+<ul>
+  <%= link_to "ブロンズ帯", ranks_path(rank: "bronz") %>
+  <%= link_to "シルバー帯", ranks_path(rank: "silver") %>
+  <%= link_to "ゴールド帯", ranks_path(rank: "gold") %>
+</ul>
+<ul>
+  <%= link_to "プラチナ帯", ranks_path(rank: "platinum") %>
+  <%= link_to "ダイア帯", ranks_path(rank: "diamond") %>
+  <%= link_to "マスター帯", ranks_path(rank: "master") %>
+</ul>
+<p>キーワード別で探す</p>
+<ul>
+  <%= link_to "初心者向け", keywords_path(keyword: "beginner") %>
+  <%= link_to "設定方法", keywords_path(keyword: "setting") %>
+  <%= link_to "キャラ別", keywords_path(keyword: "character") %>
+</ul>
+<ul>
+  <%= link_to "リコイル制御", keywords_path(keyword: "recoil_control") %>
+  <%= link_to "マップ知識", keywords_path(keyword: "map_knowledge") %>
+  <%= link_to "キャラコン", keywords_path(keyword: "characon") %>
+</ul>
